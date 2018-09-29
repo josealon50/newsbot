@@ -1,8 +1,8 @@
 const NewsAPI = require('newsapi');
-const newsapi = new NewsAPI(auth.news_api_token);
 var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
+const newsapi = new NewsAPI(auth.news_api_token);
 
 // Configure logger settings
 logger.remove(logger.transports.Console, { colorize : true });
@@ -34,6 +34,12 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 bot.sendMessage({
                     to: channelID,
                     message: 'Pong!'
+                });
+            case 'top-headlines':
+                //Get all top headlins from sources"
+                bot.sendMessage({
+                    to: channelID,
+                    message: 'Pong2'
                 });
             break;
             // Just add any case commands if you want to..
