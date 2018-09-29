@@ -1,0 +1,10 @@
+{
+    "languaage" : "en",
+    "sources": {
+        "google" : "google",
+        "bbc" : "bbc-news",
+        "verge" : "the-verge"
+    },
+    "post_time" : "15"
+
+}
