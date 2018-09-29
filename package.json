@@ -6,6 +6,7 @@
     "author": "Jose Leon",
     "dependencies": {
         "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
+        "newsapi": "^2.4.0",
         "winston": "^2.4.4"
     }
 }
