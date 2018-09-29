@@ -1,7 +1,9 @@
-
+const NewsAPI = require('newsapi');
+const newsapi = new NewsAPI(auth.news_api_token);
 var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
+
 // Configure logger settings
 logger.remove(logger.transports.Console, { colorize : true });
 logger.add(logger.transports.Console, {
@@ -38,3 +40,5 @@ bot.on('message', function (user, userID, channelID, message, evt) {
          }
      }
 });
+
+
