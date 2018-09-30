@@ -1,6 +1,7 @@
 # Work with Python 3.6
 import discord
 import json
+from news import News
 
 with open('../auth.json') as f:
     TOKENS = json.load(f)
@@ -17,6 +18,12 @@ async def on_message(message):
         msg = 'Hello {0.author.mention}'.format(message)
         await client.send_message(message.channel, msg)
 
+    if message.content.startswith('!top-headlines'):
+        x = News(TOKENS['news_api_token'])
+        data=x.topNewsHeadlines()
+        print(data)
+
+
 @client.event
 async def on_ready():
     print('Logged in as')
@@ -24,4 +31,4 @@ async def on_ready():
     print(client.user.id)
     print('------')
 
-client.run(TOKEN['discord_toke'])
+client.run(TOKENS['discord_token'])
