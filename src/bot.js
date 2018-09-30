@@ -1,8 +1,7 @@
-const NewsAPI = require('newsapi');
 var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
-const newsapi = new NewsAPI(auth.news_api_token);
+var httpService = requen('./src/service/http.js');
 
 // Configure logger settings
 logger.remove(logger.transports.Console, { colorize : true });
@@ -39,12 +38,21 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 //Get all top headlins from sources"
                 bot.sendMessage({
                     to: channelID,
-                    message: 'Pong2'
+                    message: getTopHeadlines()
+                });
+            break;
+            case 'technology':
+                //Get all top headlins from sources"
+                bot.sendMessage({
+                    to: channelID,
+                    message: getTechnologyHeadlines()
                 });
             break;
             // Just add any case commands if you want to..
          }
      }
 });
+
+
 
 
