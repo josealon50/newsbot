@@ -9,7 +9,7 @@ function getRequest( url, method,  header ){
         
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-
+                //Iterate through result 
             }
         };
         xhttp.open(method, url, true);
